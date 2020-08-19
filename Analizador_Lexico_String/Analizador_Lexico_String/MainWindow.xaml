@@ -5,19 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analizador_Lexico_String"
         mc:Ignorable="d"
-        Title="Analizador Lexico String" Height="450" Width="400">
+        Title="Analizador Lexico String" Height="400" Width="400">
     <Grid>
         <TextBox x:Name="entrada" HorizontalAlignment="Left" Height="23" Margin="21,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Text="hola a todos, tengo 10 manzanas de a Q.1.00"/>
         <Button Content="Analizar" HorizontalAlignment="Left" Margin="292,82,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.693,0.097" Click="Button_Click"/>
         <Label Content="Texto a analizar" HorizontalAlignment="Left" Margin="21,23,0,0" VerticalAlignment="Top"/>
         <Label Content="Resultados" HorizontalAlignment="Left" Margin="21,109,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="resultadoT" HorizontalAlignment="Left" Height="89" Margin="21,140,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" VerticalAlignment="Top" Width="346"/>
-        <DataGrid x:Name="TablaResultados" HorizontalAlignment="Left" Height="100" Margin="21,274,0,0" VerticalAlignment="Top" Width="302" HeadersVisibility="Column">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding itemTexto}" Width="150" Header="Texto"/>
-                <DataGridTextColumn Binding="{Binding itemResultado}" Width="150" Header="Resultado"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TextBox x:Name="resultadoT" HorizontalAlignment="Left" Height="208" Margin="21,140,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" VerticalAlignment="Top" Width="346"/>
 
     </Grid>
 </Window>
