@@ -48,14 +48,7 @@ namespace Analizador_Lexico_String
             textoSeparado = new string[texto.Length];
 
             textoSeparado = texto.Split();
-          
-            foreach (string s in textoSeparado)
-            {
-
-                Console.WriteLine("{0} ", s);
-            }
-
-
+        
             string[] expresionesRegulares = new string[7];
 
             expresionesRegulares[0] = @"(\s)"; // espacios
@@ -64,11 +57,11 @@ namespace Analizador_Lexico_String
             expresionesRegulares[2] = @"^([0-9])+([0-9])*$"; //numeros
             expresionesRegulares[3] = @"(^\d+(\.)+\d+$)"; //doubles
             expresionesRegulares[4] = @"(^Q\.\d+(\.)+\d+$)";   //moneda
-            expresionesRegulares[5] = @"([0-9])(\.)+";
-            expresionesRegulares[6] = @"(\.)+([0-9])+";
+           // expresionesRegulares[5] = @"^([a-z|A-Z])*(\,)$";
+
             for(int j = 0; j < textoSeparado.Length; j++)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     switch (i)
                     {
@@ -92,14 +85,7 @@ namespace Analizador_Lexico_String
 
                             analizador(expresionesRegulares[0], textoSeparado[j], "Espacio");
                             break;
-                        case 5:
 
-                            analizador(expresionesRegulares[5], textoSeparado[j], "NO");
-                            break;
-                        case 6:
-
-                            analizador(expresionesRegulares[6], textoSeparado[j], "NO");
-                            break;
                         default:
                             break;
 
@@ -120,16 +106,21 @@ namespace Analizador_Lexico_String
         public void analizador(string expresionRegular,String cadena, string tipo) {
             Regex r = new Regex(expresionRegular, RegexOptions.IgnoreCase);
             Match m = r.Match(cadena);
-
             while (m.Success)
             {
-                string impimir;
-                impimir= "---> '" + m.Value + " es " + tipo+ "\n";
+
+                // impimir= "---> '" + m.Value + " es " + tipo+ "\n";
+                string impimir = String.Format("+---------------------------------+\n" +
+                                               "|{0,10} {1} {2,-8} |\n" +
+                                               "+---------------------------------+\n",
+                       m.Value,"<------->", tipo);
                 
-                resultadoT.Text = resultadoT.Text += impimir;
+
+                resultadoT.Text  += impimir;
                m = m.NextMatch();
 
             }
         }
+
     }
 }
