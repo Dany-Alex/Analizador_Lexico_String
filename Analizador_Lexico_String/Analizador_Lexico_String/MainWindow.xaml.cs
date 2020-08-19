@@ -67,7 +67,7 @@ namespace Analizador_Lexico_String
                 {
                     case 0:
 
-                        analizador(expresionesRegulares[0], "Espacio")
+                        analizador(expresionesRegulares[0], "Espacio");
                         break;
                     case 1:
 
