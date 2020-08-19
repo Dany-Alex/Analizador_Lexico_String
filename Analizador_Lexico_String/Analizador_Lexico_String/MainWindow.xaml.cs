@@ -52,27 +52,56 @@ namespace Analizador_Lexico_String
             
 
             string letras = @"([a-z]|[A-Z])+";
-             //  string pat = @"\s";
- 
-            
+            //  string pat = @"\s";
 
+            string[] expresionesRegulares = new string[4];
+
+            expresionesRegulares[0] = @"(\s)";
+            expresionesRegulares[1] = @"([a-z]|[A-Z])+";
+            expresionesRegulares[2] = @"([0-9])+";
+            expresionesRegulares[3] = @"Q.";
+
+            for (int i = 0; i < 4; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+
+                        analizador(expresionesRegulares[0], "Espacio")
+                        break;
+                    case 1:
+
+                        analizador(expresionesRegulares[1], "Letras");
+                        break;
+                    case 2:
+
+                        analizador(expresionesRegulares[2], "Numeros");
+                        break;
+                    case 3:
+
+                        analizador(expresionesRegulares[3], "Moneda");
+                        break;
+                    default:
+                        break;
+
+                        
+                }
+            }
+
+        }
+
+        public void analizador(string letras, string tipo) {
             Regex r = new Regex(letras, RegexOptions.IgnoreCase);
-          
-            
             Match m = r.Match(texto);
-           
+
             while (m.Success)
             {
                 string impimir;
-                impimir="---> '"+m.Value+"' es Texto \n";
+                impimir = "---> '" + m.Value + "' es "+tipo+"\n";
                 resultadoT.Text = resultadoT.Text += impimir;
-                Console.WriteLine("---> '{0}' es Texto", m.Value);
                 m = m.NextMatch();
-              
+
             }
-
-           
-
         }
     }
 }
