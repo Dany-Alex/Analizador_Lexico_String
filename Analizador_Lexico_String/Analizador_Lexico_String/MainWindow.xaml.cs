@@ -59,14 +59,13 @@ namespace Analizador_Lexico_String
             string[] expresionesRegulares = new string[7];
 
             expresionesRegulares[0] = @"(\s)"; // espacios
-            expresionesRegulares[1] = @"([a-z]|[A-Z])+([a-z]|[A-Z])*"; //textos
-            expresionesRegulares[2] = @"([0-9])+"; //numeros
-            expresionesRegulares[3] = @"(\d+(\.)+\d+)"; //doubles
-            expresionesRegulares[4] = @"(Q\.)";   //moneda
+          //  expresionesRegulares[1] = @"([a-z]|[A-Z])+([a-z]|[A-Z])*"; //textos
+            expresionesRegulares[1] = @"^[a-z|A-Z]+([a-z|A-Z])*([a-z|A-Z])*$"; //textos
+            expresionesRegulares[2] = @"^([0-9])+([0-9])*$"; //numeros
+            expresionesRegulares[3] = @"(^\d+(\.)+\d+$)"; //doubles
+            expresionesRegulares[4] = @"(^Q\.\d+(\.)+\d+$)";   //moneda
             expresionesRegulares[5] = @"([0-9])(\.)+";
             expresionesRegulares[6] = @"(\.)+([0-9])+";
-
-
             for(int j = 0; j < textoSeparado.Length; j++)
             {
                 for (int i = 0; i < 5; i++)
@@ -125,12 +124,12 @@ namespace Analizador_Lexico_String
             while (m.Success)
             {
                 string impimir;
-                impimir = "---> '" + m.Value + "' es "+tipo+"\n";
+                impimir= "---> '" + m.Value + " es " + tipo+ "\n";
+                
                 resultadoT.Text = resultadoT.Text += impimir;
                m = m.NextMatch();
 
             }
-
         }
     }
 }
