@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analizador_Lexico_String"
         mc:Ignorable="d"
-        Title="Analizador Lexico String" Height="450" Width="400">
+        Title="Analizador Lexico String" Height="400" Width="400">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="21,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346"/>
-        <Button Content="Analizar" HorizontalAlignment="Left" Margin="139,108,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.693,0.097"/>
+        <TextBox x:Name="entrada" HorizontalAlignment="Left" Height="23" Margin="21,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Text="Compre 5 manzanas por un costo de Q.20.00" />
+        <Button Content="Analizar" HorizontalAlignment="Left" Margin="299,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.693,0.097" Click="Button_Click"/>
         <Label Content="Texto a analizar" HorizontalAlignment="Left" Margin="21,23,0,0" VerticalAlignment="Top"/>
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="21,204,0,0" VerticalAlignment="Top" Width="346" Grid.RowSpan="5"/>
-        <Label Content="Resultados" HorizontalAlignment="Left" Margin="21,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lexema" HorizontalAlignment="Left" Margin="21,109,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="resultadoT" HorizontalAlignment="Left" Height="208" Margin="21,140,0,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" />
+        <Label Content="Token" HorizontalAlignment="Left" Margin="137,109,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;-------&gt;" HorizontalAlignment="Left" Margin="71,109,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
