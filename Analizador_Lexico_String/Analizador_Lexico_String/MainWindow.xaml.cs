@@ -55,8 +55,8 @@ namespace Analizador_Lexico_String
           //  expresionesRegulares[1] = @"([a-z]|[A-Z])+([a-z]|[A-Z])*"; //textos
             expresionesRegulares[1] = @"^[a-z|A-Z]+([a-z|A-Z])*([a-z|A-Z])*$"; //textos
             expresionesRegulares[2] = @"^([0-9])+([0-9])*$"; //numeros
-            expresionesRegulares[3] = @"(^\d+(\.)+\d+$)"; //doubles
-            expresionesRegulares[4] = @"(^Q\.\d+(\.)+\d+$)";   //moneda
+            expresionesRegulares[3] = @"(\d+(\.)+\d+$)"; //doubles
+            expresionesRegulares[4] = @"(^Q\.+)";   //moneda
            // expresionesRegulares[5] = @"^([a-z|A-Z])*(\,)$";
 
             for(int j = 0; j < textoSeparado.Length; j++)
